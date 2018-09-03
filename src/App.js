@@ -13,14 +13,21 @@ class App extends Component {
 
   consoleLog() {
     console.log('Extra click.');
+    this.setState({
+      user_name: 'Gianfranco'
+    })
   }
 
   constructor(props) {
     super(props);
-    this.state = {date: new Date()};
+    this.state = {
+      date: new Date(),
+      user_name: 'Lebadoi',
+    };
   }
 
   render() {
+    // eslint-disable-next-line
     var testOne = Date();
 
     const arrayInfo = ['welcome', 'to', 'jamaica', 'motherfucker', 'eat', 'shit'];
@@ -41,15 +48,14 @@ class App extends Component {
         <div className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
           <p style={{fontSize:"35px",color:"#ff0000"}}>I allready started. Now go away.</p>
-          <p>{testOne}</p>
+          <p>{this.state.user_name}</p>
         </div>
-        {arrayToRender}
         <NameComponent />
 
-        <button onClick={() => {console.log('Button pressed!')}}>
+        <button onClick={() => {this.setState({user_name: 'Lore'})}}>
           Press Me!
         </button>
-        <button onClick={this.consoleLog}>
+        <button onClick={this.consoleLog.bind(this)}>
           Extra click!
         </button>
 
