@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 
 import NameComponent from './components/NameComponent';
+// eslint-disable-next-line
+import Apps from './LearnApps';
 
 class App extends Component {
   componentDidMount() {
@@ -36,11 +38,11 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
+        <div className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
           <p style={{fontSize:"35px",color:"#ff0000"}}>I allready started. Now go away.</p>
           <p>{testOne}</p>
-        </p>
+        </div>
         {arrayToRender}
         <NameComponent />
 
