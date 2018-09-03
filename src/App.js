@@ -22,7 +22,7 @@ class App extends Component {
     super(props);
     this.state = {
       date: new Date(),
-      user_name: 'Lebadoi',
+      user_name: 'Daniel',
     };
   }
 
@@ -50,9 +50,10 @@ class App extends Component {
           <p style={{fontSize:"35px",color:"#ff0000"}}>I allready started. Now go away.</p>
           <p>{this.state.user_name}</p>
         </div>
-        <NameComponent />
 
-        <button onClick={() => {this.setState({user_name: 'Lore'})}}>
+        <NameComponent user_name={this.state.user_name} />
+
+        <button onClick={() => {this.setState({user_name: 'Lore Lebadoi'})}}>
           Press Me!
         </button>
         <button onClick={this.consoleLog.bind(this)}>
